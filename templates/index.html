@@ -6,6 +6,15 @@
         <p><input type="file" id = "upload_files" name = "upload_files" multiple="multiple" class="form-control"></p>
         <p><input type="submit" value="送信" class="form-control btn btn-primary"></p>
     </form>
+
+    {% if enter_images %}
+    {% for path in enter_images %}
+        <div>
+        <img src="images/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
+        {{ path }}
+        </div>
+    {% endfor %}
+    {% endif %}
 </div>
 
 {% endblock %}

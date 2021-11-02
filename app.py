@@ -39,6 +39,10 @@ def uploads_file():
                 uploads_file.save(img_path)
         return redirect('/')
 
+@app.route('/images/<path:path>')
+def send_image(path):
+    return send_from_directory(UPLOAD_FOLDER_ENTER, path)
+
 #スクリプトからAPIを叩けるようにします。
 if __name__ == "__main__":
     app.run(debug=True)
