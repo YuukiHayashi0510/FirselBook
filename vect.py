@@ -43,6 +43,7 @@ def preprocess_input(x, data_format=None, version=1):
 def to_vector(upload_file, target_dict, img_path):
     """
     画像をベクトル化する
+
     Parameters
     ----------
     upload_file : file_path
