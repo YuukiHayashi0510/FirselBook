@@ -11,7 +11,7 @@ from flask import (
     send_from_directory)
 
 UPLOAD_FOLDER_ENTER = './image_enter'
-UPLOAD_FOLDER_REFERENCE = './image_reference'
+IMAGE_FOLDER_REFERENCE = './image_reference'
 
 app = Flask(__name__)
 
@@ -19,7 +19,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html',
         enter_images=os.listdir(UPLOAD_FOLDER_ENTER)[::-1],
-        reference_images=os.listdir(UPLOAD_FOLDER_REFERENCE)[::-1])
+        reference_images=os.listdir(IMAGE_FOLDER_REFERENCE)[::-1])
 
 @app.route('/upload', methods=['GET', 'POST'])
 def uploads_file():
