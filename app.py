@@ -10,8 +10,16 @@ from flask import (
     render_template, 
     send_from_directory)
 
+from vect import to_vector
+
 UPLOAD_FOLDER_ENTER = './image_enter'
 IMAGE_FOLDER_REFERENCE = './image_reference'
+
+entry_dict = {} # アップロードする画像 key=path, value=ベクトル
+reference_dict = {} # 比較する画像 key=path, value=ベクトル
+
+for references_file in os.listdir(IMAGE_FOLDER_REFERENCE):
+    to_vector(references_file, IMAGE_FOLDER_REFERENCE,reference_dict)
 
 app = Flask(__name__)
 
