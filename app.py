@@ -68,19 +68,19 @@ def uploads_file():
                 img_path = os.path.join(UPLOAD_FOLDER_ENTER, uploads_file.filename)
                 uploads_file.save(img_path)
                 to_vector(uploads_file, entry_dict, img_path)
-                #最も似ている芸能人の顔写真へのパスと類似度を保存するための変数
+                #最も似ている画像へのパスと類似度を保存するための変数
                 most_similar_img = ''
                 max_similarity = 0
                 for r_path, r_vector in reference_dict.items():
                     if get_similarity(entry_dict[uploads_file], r_vector) > max_similarity:
                         max_similarity = get_similarity(entry_dict[uploads_file], r_vector)
                         most_similar_img = r_path
-                    filename = most_similar_img.split('//')[-1] #windowsの方は
-                    return render_template(
-                    'result.html',
-                    filename=filename,
-                    score=max_similarity
-                    )
+                filename = most_similar_img.split('//')[-1] #windowsは//, macは\\
+                return render_template(
+                'result.html',
+                filename=filename,
+                score=max_similarity
+                )
                 return redirect('/')
 
 
