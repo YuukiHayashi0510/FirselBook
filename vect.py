@@ -2,7 +2,7 @@ import os
 import numpy as np
 from keras import backend as K
 from keras.preprocessing import image
-from keras.applications.vgg16 import preprocess_input
+from keras.applications.vgg16 import preprocess_input, VGG16
 
 def preprocess_input(x, data_format=None, version=1):
     K.clear_session()
@@ -58,4 +58,9 @@ def to_vector(upload_file, target_dict, img_path):
     x = preprocess_input(x) # 画像の前処理を行い、前処理済みの画像をxという変数に格納する
     book_img_arrays = image.img_to_array(book_img) # 画像を行列にする
     book_array = preprocess_input(book_img_arrays, version=2) # 前処理
-    target_dict[upload_file] = book_array # 辞書に登録
+    book_array = book_array.reshape(-1, 224, 224, 3)
+    model = VGG16(weights='imagenet')
+    book_img_vector = model.predict(book_array)
+    #face vectorと顔画像パスとのマッピング
+    for i, vector in enumerate(book_img_vector):
+        target_dict[upload_file] = vector

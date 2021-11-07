@@ -1,5 +1,7 @@
 import os
 import sys 
+import tensorflow.compat.v1 as tf
+
 from flask import (
     Flask, 
     request, 
@@ -9,6 +11,7 @@ from flask import (
     jsonify, 
     render_template, 
     send_from_directory)
+from keras.applications.vgg16 import VGG16, decode_predictions
 
 from vect import to_vector
 
@@ -20,7 +23,7 @@ reference_dict = {} # 比較する画像 key=path, value=ベクトル
 
 for references_file in os.listdir(IMAGE_FOLDER_REFERENCE):
     reference_img_path = os.path.join(IMAGE_FOLDER_REFERENCE, references_file)
-    to_vector(references_file, reference_dict, reference_img_path )
+    to_vector(references_file, reference_dict, reference_img_path)
 
 app = Flask(__name__)
 
