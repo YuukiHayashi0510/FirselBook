@@ -19,7 +19,8 @@ entry_dict = {} # アップロードする画像 key=path, value=ベクトル
 reference_dict = {} # 比較する画像 key=path, value=ベクトル
 
 for references_file in os.listdir(IMAGE_FOLDER_REFERENCE):
-    to_vector(references_file, IMAGE_FOLDER_REFERENCE,reference_dict)
+    reference_img_path = os.path.join(IMAGE_FOLDER_REFERENCE, references_file)
+    to_vector(references_file, reference_dict, reference_img_path )
 
 app = Flask(__name__)
 
@@ -45,6 +46,7 @@ def uploads_file():
                 #それぞれの画像に対してimage_enterまでのパスを定義作成してsaveメソッドを用いて保存する。
                 img_path = os.path.join(UPLOAD_FOLDER_ENTER, uploads_file.filename)
                 uploads_file.save(img_path)
+                to_vector(uploads_file, entry_dict, img_path)
         return redirect('/')
 
 @app.route('/images/<path:path>')

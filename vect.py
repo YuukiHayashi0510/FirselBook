@@ -1,6 +1,5 @@
 import os
 import numpy as np
-import tensorflow.compat.v1 as tf
 from keras import backend as K
 from keras.preprocessing import image
 from keras.applications.vgg16 import preprocess_input
@@ -41,8 +40,18 @@ def preprocess_input(x, data_format=None, version=1):
     return x_temp
 
 
-def to_vector(upload_file, target_dir, target_dict):
-    img_path = os.path.join(target_dir, upload_file)
+def to_vector(upload_file, target_dict, img_path):
+    """
+    画像をベクトル化する
+    Parameters
+    ----------
+    upload_file : file_path
+        アップロード画像のpath
+    target_dict : dictionary
+        扱う画像別の辞書
+    img_path : file_path
+        os.joinされたpath
+    """
     book_img = image.load_img(img_path, target_size=(224,224))
     x = image.img_to_array(book_img) #モデルが認識できる形式に画像を変換する
     x = x[np.newaxis, ...] # 複数の画像が読み込めるよう、n * height * width * channelの入力をとるようになっているため、軸を一つ加えている
