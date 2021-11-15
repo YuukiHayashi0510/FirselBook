@@ -62,6 +62,6 @@ def to_vector(upload_file, target_dict, img_path):
     book_array = book_array.reshape(-1, 224, 224, 3)
     model = VGG16(weights='imagenet')
     book_img_vector = model.predict(book_array)
-    #face vectorと顔画像パスとのマッピング
+    # vectorと画像パスとのマッピング
     for i, vector in enumerate(book_img_vector):
         target_dict[upload_file] = vector
