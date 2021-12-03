@@ -23,14 +23,15 @@ def vecs_array(documents):
 
 def title_to_vector():
     df_title = pd.read_excel('NovelComics.xlsx', index_col=0, usecols=['Title'])
-    vector = [0] * 60
-    for i in range(60):
-        vector[i] = np.array(vecs_array(wakachi(df_title.index.values[i])))
+    vector = [0] * 10
+    for i in range(10):
+        vector[i] = vecs_array(wakachi(df_title.index.values[i]))
     return vector
 
 df = pd.read_excel('NovelComics.xlsx')
 
 vector = title_to_vector()
 
-for i in range(len(df)):
-    df.at[i, 'Vector'] = vector[i]
+for i,j in enumerate(vector):
+    df.at[i, 'Vector'] = j
+print(df)
