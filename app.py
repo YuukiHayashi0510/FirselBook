@@ -21,6 +21,10 @@ IMAGE_FOLDER_REFERENCE = './images/image_reference'
 
 entry_dict = {} # アップロードする画像 key=path, value=ベクトル
 reference_dict = {} # 比較する画像 key=path, value=ベクトル
+num_image_dict = { 'ONEPIECE.jpg':490000000,
+'NARUTO.jpg':250000000, 'BLEACH.jpg':120000000, 
+'HUNTER×HUNTER ハンター×ハンター.jpg':78000000,
+'FAIRYTAIL フェアリーテイル.jpg':72000000} # 部数と画像ファイルのパス
 
 def start_up(): # アプリ起動前から完成(実行)しておきたい所...
     reference_dict.clear()
@@ -76,11 +80,15 @@ def uploads_file():
                     if get_similarity(entry_dict[uploads_file], r_vector) > max_similarity:
                         max_similarity = get_similarity(entry_dict[uploads_file], r_vector)
                         most_similar_img = r_path
+                        num_circ = num_image_dict[most_similar_img]
                 filename = most_similar_img.split('//')[-1] #windowsは//, macは\\
+                result = num_circ * max_similarity
                 return render_template(
                 'result.html',
                 filename=filename,
-                score=max_similarity
+                score=max_similarity,
+                num_circ=num_circ,
+                result=result
                 )
                 return redirect('/')
 
