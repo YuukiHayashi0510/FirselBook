@@ -1,20 +1,33 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="enter_btn">
-    <h2>写真をアップロードしてください</h2>
+    <h3>背表紙の写真をアップロードしてください</h3>
     <form action = "/upload" method="post" enctype="multipart/form-data">
-        <p><input type="file" id = "upload_files" name = "upload_files" multiple="multiple" class="form-control"></p>
-        <p><input type="submit" value="送信" class="form-control btn btn-primary"></p>
+        <p><input type="file" id = "upload_files" name = "upload_files" multiple="multiple" required="required" onchange="previewImage(this);"></p>
+        <img id="preview">
+        <p><input type="submit" value="送信" class="btn btn-primary"></p>
     </form>
 
     {% if enter_images %}
     {% for path in enter_images %}
         <div>
+            <h4>履歴</h4>
         <img src="images/image_enter/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
-        {{ path }}
+        <!-- {{ path }} -->
         </div>
     {% endfor %}
     {% endif %}
 </div>
 
 {% endblock %}
+
+<script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+            document.getElementById('preview').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]);
+    }
+</script>
