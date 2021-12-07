@@ -16,8 +16,8 @@ from keras.applications.vgg16 import VGG16, decode_predictions
 from vect import to_vector
 from scipy.spatial.distance import cosine
 
-UPLOAD_FOLDER_ENTER = './images/image_enter'
-IMAGE_FOLDER_REFERENCE = './images/image_reference'
+UPLOAD_FOLDER_ENTER = './static/images/image_enter'
+IMAGE_FOLDER_REFERENCE = './static/images/image_reference'
 
 entry_dict = {} # アップロードする画像 key=path, value=ベクトル
 reference_dict = {} # 比較する画像 key=path, value=ベクトル
@@ -48,7 +48,7 @@ def get_similarity(entry_vector, reference_vector):
 
 start_up()
 
-app = Flask(__name__, static_folder='./images')
+app = Flask(__name__)
 
 @app.route('/')
 def index():

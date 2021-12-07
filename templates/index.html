@@ -4,7 +4,7 @@
     <h3>背表紙の写真をアップロードしてください</h3>
     <form action = "/upload" method="post" enctype="multipart/form-data">
         <p><input type="file" id = "upload_files" name = "upload_files" multiple="multiple" required="required" onchange="previewImage(this);"></p>
-        <img id="preview">
+        <img id="preview" style="width: 20%;">
         <p><input type="submit" value="送信" class="btn btn-primary"></p>
     </form>
 
@@ -12,15 +12,12 @@
     {% for path in enter_images %}
         <div>
             <h4>履歴</h4>
-        <img src="images/image_enter/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
+        <img src="./static/images/image_enter/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
         <!-- {{ path }} -->
         </div>
     {% endfor %}
     {% endif %}
 </div>
-
-{% endblock %}
-
 <script>
     function previewImage(obj)
     {
@@ -31,3 +28,5 @@
         fileReader.readAsDataURL(obj.files[0]);
     }
 </script>
+{% endblock %}
+
