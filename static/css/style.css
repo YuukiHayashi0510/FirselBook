@@ -1,35 +1,60 @@
 header {
     background-color: rgba(241, 237, 237, 0.87);
+    height: 80px;
+    line-height: 80px;
 }
+
 header a {
     color: #5f0f40;
     font-family: "Georgia";
-    font-size: 250%;
-    padding: 2%;
+    font-size: 230%;
+    padding: 2% 2% 2% 3%;
+    margin: 2%;
 }
+
 header a:hover {
     color: #5f0f40;
     text-decoration: none;
 }
 
 .upload-form {
-    margin-top: 4%;
+    margin: 2% auto;
+    text-align: center;
+    width: 80%;
+    display: block;
+}
+
+.direct-upload {
+    font-size: 200%;
+}
+
+#upload_files {
+    margin: 1% 25%;
+    float: left;
 }
 
 .submit-btn {
+    display: inline-block;
     margin: 2%;
+    width: 50%;
 }
 
 .submit-icon {
     margin: 10px;
 }
 
+.history-box {
+    margin: 10% auto;
+    text-align: left;
+    width: 80%;
+}
+
 footer {
     bottom: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    color: white;
-    background-color: black;
+    color: #9a031e;
+    background-color: rgba(241, 237, 237, 0.87);
     text-align: center;
 }
 

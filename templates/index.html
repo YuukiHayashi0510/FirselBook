@@ -1,22 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<center class="upload-form">
-    <h3>背表紙の写真をアップロードしてください</h3>
+<div class="upload-form">
+    <p class="direct-upload">写真をアップロードしてください</p>
     <form action = "/upload" method="post" enctype="multipart/form-data">
-        <p><input type="file" id = "upload_files" name = "upload_files" multiple="multiple" required="required" onchange="previewImage(this);"></p>
-        <img id="preview" style="width: 20%;">
+        <input type="file" id="upload_files" name="upload_files" multiple="multiple" required="required" onchange="previewImage(this);"><br>
+        <img id="preview" style="width: 20%;"><br>
         <button type="submit" value="送信" class="submit-btn">
-            <span class="submit-icon">送信</span><i class="fas fa-paper-plane"></i>
+            <i class="fas fa-paper-plane"></i><span class="submit-icon">送信</span>
         </button>
     </form>
-</center>
+</div>
 
 <div class="history-box">
-    <button onclick="changeDisplay(this, history)"><i class="fas fa-history"></i>履歴</button>
+    <button onclick="changeDisplay(this, history)"><i class="fas fa-history"></i>履歴</button><br />
 
     <div id="history" style="display: none;">
-        <h3>履歴</h3>
     {% if enter_images %}
         {% for path in enter_images %}
             <img src="./static/images/image_enter/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
