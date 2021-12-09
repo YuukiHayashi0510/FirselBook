@@ -4,10 +4,33 @@ header {
 header a {
     color: #5f0f40;
     font-family: "Georgia";
+    font-size: 250%;
+    padding: 2%;
 }
 header a:hover {
     color: #5f0f40;
     text-decoration: none;
+}
+
+.upload-form {
+    margin-top: 4%;
+}
+
+.submit-btn {
+    margin: 2%;
+}
+
+.submit-icon {
+    margin: 10px;
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    color: white;
+    background-color: black;
+    text-align: center;
 }
 
 /* ネザーぽいマゼンタ #5f0f40

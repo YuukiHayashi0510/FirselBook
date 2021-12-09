@@ -1,7 +1,4 @@
 {
-    "cSpell.words": [
-        "jsonify",
-        "keras",
-        "scipy"
-    ]
+  "cSpell.words": ["jsonify", "keras", "scipy"],
+  "cmake.configureOnOpen": false
 }
