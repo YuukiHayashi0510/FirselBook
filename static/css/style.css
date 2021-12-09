@@ -2,8 +2,7 @@
 
 header {
     background-color: rgba(241, 237, 237, 0.87);
-    height: 35%;
-    line-height: 80px;
+    line-height: 60px;
     width: 100%;
 }
 
@@ -11,7 +10,7 @@ header a {
     color: #5f0f40;
     font-family: "Georgia";
     font-size: 230%;
-    padding: 2% 2% 2% 3%;
+    padding: 2% 2% 2% 8%;
     margin: 2%;
 }
 
@@ -24,6 +23,7 @@ footer {
     bottom: 0;
     position: fixed;
     width: 100%;
+    line-height: 40px;
     color: #27c2a4;
     background-color: rgba(241, 237, 237, 0.87);
     text-align: center;
@@ -33,7 +33,7 @@ footer {
 
 .index-box {
     width: 80%;
-    margin: 2% auto;
+    margin: 4% auto;
     border: double 0.6vh #5f0f40;
     /* border-left: double 3px #5f0f40;
     border-right: double 3px #5f0f40; */
@@ -49,16 +49,21 @@ footer {
 .direct-upload {
     font-size: 200%;
     font-family: "メイリオ","Yu Gothic UI";
+    color: #5f0f40;
 }
 
 #upload_files {
     margin: 1% auto;
 }
 
+#preview {
+    padding: 1%;
+}
+
 .submit-btn {
     display: inline-block;
-    margin: 2%;
-    width: 60vh;
+    padding: 1% 4% 1% 4%;
+    width: 70vh;
     border-radius: 100vh;
     border-color: #9a031e;
     color: #9a031e;
@@ -71,17 +76,13 @@ footer {
     color: rgba(241, 237, 237, 0.87);
 }
 
-.submit-str {
-    padding: 3%;
-}
-
 .submit-icon {
     margin: 10px;
 }
 
 .history-box {
     margin: 8% auto;
-    width: 65%;
+    width: 80%;
     text-align: center;
 }
 
@@ -89,7 +90,8 @@ footer {
     border-radius: 100vh;
     color: #e36414;
     border-color: #e36414;
-    padding: 1%;
+    width: 70vh;
+    padding: 1% 4% 1% 4%;
 }
 
 .history-btn:hover {
@@ -102,11 +104,47 @@ footer {
 
 .result-box {
     text-align: center;
-    margin: 2%;
+    margin: 2% auto 5% auto;
+    width: 80%;
+    border: double 0.6vh #5f0f40;
+}
+
+.result {
+    margin: 1%;
+}
+
+.result-box h3 {
+    margin-top: 2%;
+    color: #5f0f40;
+}
+
+.result-box h4 {
+    color: #9a031e;
+}
+
+.book-detail {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.result-message {
+    text-align: left;
+    padding-top: 3%;
+    font-size: 125%;
+}
+
+.result-detail {
+    margin: 1% auto 3% auto;
+}
+
+.result-box a {
+    color: #e36414;
 }
 
 .result-box a:hover{
     text-decoration: none;
+    color: #e36414;
 }
 
 /* ネザーぽいマゼンタ #5f0f40
