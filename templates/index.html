@@ -4,8 +4,8 @@
 <div class="upload-form">
     <p class="direct-upload">写真をアップロードしてください</p>
     <form action = "/upload" method="post" enctype="multipart/form-data">
-        <input type="file" id="upload_files" name="upload_files" multiple="multiple" required="required" onchange="previewImage(this);"><br>
-        <img id="preview" style="width: 20%;"><br>
+        <input type="file" id="upload_files" name="upload_files" multiple="multiple" required="required" onchange="previewImage(this);">
+        <img id="preview" style="width: 25%;"><br>
         <button type="submit" value="送信" class="submit-btn">
             <i class="fas fa-paper-plane"></i><span class="submit-icon">送信</span>
         </button>

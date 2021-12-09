@@ -30,7 +30,6 @@ header a:hover {
 
 #upload_files {
     margin: 1% 25%;
-    float: left;
 }
 
 .submit-btn {
@@ -45,8 +44,7 @@ header a:hover {
 
 .history-box {
     margin: 10% auto;
-    text-align: left;
-    width: 80%;
+    width: 50%;
 }
 
 footer {

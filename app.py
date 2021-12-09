@@ -1,18 +1,10 @@
 import os
-import sys
-import csv
-import tensorflow.compat.v1 as tf
-
+import math
 from flask import (
     Flask, 
     request, 
     redirect, 
-    url_for, 
-    make_response, 
-    jsonify, 
-    render_template, 
-    send_from_directory)
-from keras.applications.vgg16 import VGG16, decode_predictions
+    render_template)
 from vect import to_vector
 from scipy.spatial.distance import cosine
 
@@ -86,9 +78,9 @@ def uploads_file():
                 return render_template(
                 'result.html',
                 filename=filename,
-                score=max_similarity,
+                score=math.floor(max_similarity*100),
                 num_circ=num_circ,
-                result=result
+                result=math.floor(result)
                 )
                 return redirect('/')
 
