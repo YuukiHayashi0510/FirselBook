@@ -2,17 +2,19 @@
 {% block content %}
 
 
+<div class="result-box">
+    <h3>
+        画像の類似度
+    </h3>
+    <img src= "./static/images/image_reference/{{ filename }}" style="margin: 20px; vertical-align: bottom; width: 200px;">
+    <div>類似度: {{ score }} %</div>
+    <div>部数：{{ num_circ }}</div>
+    <div>推測部数：{{ result }}</div>
+    <!-- 項目のアイコン化fontawesome、自分が入れた画像の表示（見えた方が面白そう）
+    類似度のフォントサイズ -->
+    <a href="/">トップへ戻る</a>
+</div>
 
-<h1>
-    画像の類似度
-</h1>
-<img src= "./static/images/image_reference/{{ filename }}" style="margin: 20px; vertical-align: bottom; width: 200px;">
-<div>類似度: {{ score }} %</div>
-<div>部数：{{ num_circ }}</div>
-<div>推測部数：{{ result }}</div>
-<!-- 項目のアイコン化fontawesome、自分が入れた画像の表示（見えた方が面白そう）
-類似度のフォントサイズ -->
-<a href="/">トップへ戻る</a>
 
 
     {% endblock %}

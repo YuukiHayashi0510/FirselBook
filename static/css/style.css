@@ -1,7 +1,10 @@
+/* layout.html */
+
 header {
     background-color: rgba(241, 237, 237, 0.87);
-    height: 80px;
+    height: 35%;
     line-height: 80px;
+    width: 100%;
 }
 
 header a {
@@ -17,6 +20,21 @@ header a:hover {
     text-decoration: none;
 }
 
+body {
+    background: rgba(241, 237, 237, 0.973);
+}
+
+footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    color: #27c2a4;
+    background-color: rgba(241, 237, 237, 0.87);
+    text-align: center;
+}
+
+/* index.html */
+
 .upload-form {
     margin: 2% auto;
     text-align: center;
@@ -29,13 +47,21 @@ header a:hover {
 }
 
 #upload_files {
-    margin: 1% 25%;
+    margin: 1% auto;
 }
 
 .submit-btn {
     display: inline-block;
     margin: 2%;
-    width: 50%;
+    width: 60vh;
+    border-radius: 100vh;
+    color: #9a031e;
+    background-color: rgba(241, 237, 237, 0.87);
+}
+
+.submit-btn:hover {
+    background-color: #9a031e;
+    color: rgba(241, 237, 237, 0.87);
 }
 
 .submit-icon {
@@ -47,13 +73,21 @@ header a:hover {
     width: 50%;
 }
 
-footer {
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-    color: #9a031e;
-    background-color: rgba(241, 237, 237, 0.87);
+.history-btn {
+    border-radius: 100vh;
+    color: #e36414;
+}
+
+.history-btn:hover {
+    color: rgba(241, 237, 237, 0.87);
+    background-color: #e36414;
+}
+
+/* result.html */
+
+.result-box {
     text-align: center;
+    margin: 2%;
 }
 
 /* ネザーぽいマゼンタ #5f0f40
