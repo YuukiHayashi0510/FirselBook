@@ -20,10 +20,6 @@ header a:hover {
     text-decoration: none;
 }
 
-body {
-    background: rgba(241, 237, 237, 0.973);
-}
-
 footer {
     bottom: 0;
     position: fixed;
@@ -35,6 +31,14 @@ footer {
 
 /* index.html */
 
+.index-box {
+    width: 80%;
+    margin: 2% auto;
+    border: double 0.6vh #5f0f40;
+    /* border-left: double 3px #5f0f40;
+    border-right: double 3px #5f0f40; */
+}
+
 .upload-form {
     margin: 2% auto;
     text-align: center;
@@ -44,6 +48,7 @@ footer {
 
 .direct-upload {
     font-size: 200%;
+    font-family: "メイリオ","Yu Gothic UI";
 }
 
 #upload_files {
@@ -55,13 +60,19 @@ footer {
     margin: 2%;
     width: 60vh;
     border-radius: 100vh;
+    border-color: #9a031e;
     color: #9a031e;
     background-color: rgba(241, 237, 237, 0.87);
 }
 
 .submit-btn:hover {
     background-color: #9a031e;
+    border-color: rgba(241, 237, 237, 0.87);
     color: rgba(241, 237, 237, 0.87);
+}
+
+.submit-str {
+    padding: 3%;
 }
 
 .submit-icon {
@@ -69,18 +80,22 @@ footer {
 }
 
 .history-box {
-    margin: 10% auto;
-    width: 50%;
+    margin: 8% auto;
+    width: 65%;
+    text-align: center;
 }
 
 .history-btn {
     border-radius: 100vh;
     color: #e36414;
+    border-color: #e36414;
+    padding: 1%;
 }
 
 .history-btn:hover {
     color: rgba(241, 237, 237, 0.87);
     background-color: #e36414;
+    border-color: rgba(241, 237, 237, 0.87);
 }
 
 /* result.html */
@@ -88,6 +103,10 @@ footer {
 .result-box {
     text-align: center;
     margin: 2%;
+}
+
+.result-box a:hover{
+    text-decoration: none;
 }
 
 /* ネザーぽいマゼンタ #5f0f40

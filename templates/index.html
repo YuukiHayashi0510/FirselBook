@@ -1,29 +1,33 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="index-box">
+    <div class="upload-form">
+        <p class="direct-upload">写真をアップロードしてください</p>
+        <form action = "/upload" method="post" enctype="multipart/form-data">
+            <input type="file" id="upload_files" name="upload_files" multiple="multiple" required="required" onchange="previewImage(this);"><br>
+            <img id="preview" style="width: 25%;"><br>
+            <button type="submit" value="送信" class="submit-btn">
+                <div class="submit-str">
+                    <i class="fas fa-paper-plane"></i><span class="submit-icon">送信</span>
+                </div>
+            </button>
+        </form>
+    </div>
 
-<div class="upload-form">
-    <p class="direct-upload">写真をアップロードしてください</p>
-    <form action = "/upload" method="post" enctype="multipart/form-data">
-        <input type="file" id="upload_files" name="upload_files" multiple="multiple" required="required" onchange="previewImage(this);"><br>
-        <img id="preview" style="width: 25%;"><br>
-        <button type="submit" value="送信" class="submit-btn">
-            <i class="fas fa-paper-plane"></i><span class="submit-icon">送信</span>
-        </button>
-    </form>
-</div>
+    <div class="history-box">
+        <button class="history-btn" onclick="changeDisplay(this, history)"><i class="fas fa-history"></i>履歴</button><br />
 
-<div class="history-box">
-    <button class="history-btn" onclick="changeDisplay(this, history)"><i class="fas fa-history"></i>履歴</button><br />
-
-    <div id="history" style="display: none;">
-    {% if enter_images %}
-        {% for path in enter_images %}
-            <img src="./static/images/image_enter/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
-            <!-- {{ path }} -->
-        {% endfor %}
-    {% endif %}
+        <div id="history" style="display: none;">
+        {% if enter_images %}
+            {% for path in enter_images %}
+                <img src="./static/images/image_enter/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
+                <!-- {{ path }} -->
+            {% endfor %}
+        {% endif %}
+        </div>
     </div>
 </div>
+
 
 {% endblock %}
 
