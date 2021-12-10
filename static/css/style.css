@@ -19,6 +19,10 @@ header a:hover {
     text-decoration: none;
 }
 
+header a:focus {
+    outline: none;
+}
+
 footer {
     bottom: 0;
     position: fixed;
@@ -56,6 +60,10 @@ footer {
     margin: 1% auto;
 }
 
+#upload_files:focus {
+    outline: none;
+}
+
 #preview {
     padding: 1%;
 }
@@ -74,6 +82,10 @@ footer {
     background-color: #9a031e;
     border-color: rgba(241, 237, 237, 0.87);
     color: rgba(241, 237, 237, 0.87);
+}
+
+.submit-btn:focus {
+    outline: none;
 }
 
 .submit-icon {
@@ -98,6 +110,10 @@ footer {
     color: rgba(241, 237, 237, 0.87);
     background-color: #e36414;
     border-color: rgba(241, 237, 237, 0.87);
+}
+
+.history-btn:focus {
+    outline: none;
 }
 
 /* result.html */
