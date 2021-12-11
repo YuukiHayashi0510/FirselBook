@@ -31,7 +31,6 @@ importlib-metadata==4.8.1
 intel-openmp==2021.4.0
 itsdangerous==2.0.1
 jinja2==3.0.2
-jpeg==9d
 keras==2.4.3
 keras-applications==1.0.8
 keras-base==2.4.3
