@@ -19,7 +19,6 @@ cryptography==3.4.8
 cython==0.29.24
 et_xmlfile==1.1.0
 flask==2.0.2
-freetype==2.10.4
 gast==0.3.3
 google-auth==1.33.0
 google-auth-oauthlib==0.4.4
