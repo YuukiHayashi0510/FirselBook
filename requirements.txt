@@ -33,7 +33,6 @@ itsdangerous==2.0.1
 jinja2==3.0.2
 keras==2.4.3
 keras-applications==1.0.8
-keras-base==2.4.3
 keras-preprocessing==1.1.2
 libpng==1.6.37
 libprotobuf==3.17.2
