@@ -1,5 +1,5 @@
 flask==2.0.2
-keras==2.4.0
+keras==2.2.3
 numpy==1.19.2
 scipy==1.4.1
 tensorflow==1.13.1
